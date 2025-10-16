@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+## 🚀 Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🧠 Task A — API Integration
+A simple, responsive web interface that integrates with the **Google Gemini 2.0 Flash API**.  
+Users can type a prompt or question, send it to the API, and view the model’s generated response in real time.
 
-## Available Scripts
+### 🎨 Task B — Reusable UI Components
+Two standalone components created for flexibility and reusability:
+1. **Blur Text Component** — Text initially appears blurred and becomes sharp on hover or via a prop.
+2. **Custom Link Component** — Styled link with smooth hover transitions and configurable options.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Category | Tools / Frameworks |
+|-----------|--------------------|
+| Frontend | React.js, HTML, CSS, JavaScript |
+| API | Google Generative Language API (Gemini 2.0 Flash) |
+| Styling | Pure CSS |
+| Build Tool | Create React App |
+| Deployment | Vercel / Netlify (optional) |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚙️ Setup Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to run the project locally:
 
-### `npm run build`
+### 1️⃣ Clone the Repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+git clone https://github.com/Karthi-47/gemini-api-task.git
+cd gemini-api-task
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2️⃣ Install Dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3️⃣ Configure Environment Variables
 
-### `npm run eject`
+Create a file named .env.local in the root folder and add your Gemini API key:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+REACT_APP_GEMINI_KEY=your_api_key_here
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+⚠️ Do not commit this file.
+Ensure .env.local is listed in .gitignore so your API key stays private.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 4️⃣ Start the Application
+npm start
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app will start on http://localhost:3000
+.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🧩 Folder Structure
+```
+gemini-api-task/
+│
+├── public/
+│   ├── index.html
+│
+├── src/
+│   ├── components/
+│   │   ├── BlurText.js
+│   │   └── CustomLink.js
+│   ├── App.js
+│   ├── index.js
+│
+├── .env.local        # (Not committed)
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-### Code Splitting
+### 💡 Approach & Implementation Details
+#### 🔹 Task A — Gemini API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Implemented using fetch() with a secure API key.
 
-### Analyzing the Bundle Size
+Prompt and response handled dynamically through React state.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Used loading spinner and error messages for better user experience.
 
-### Making a Progressive Web App
+Structured the request according to Gemini’s latest generateContent endpoint format.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Followed best practices to keep the API key secure using environment variables.
 
-### Advanced Configuration
+#### 🔹 Task B — Reusable UI Components
+##### 1. BlurText Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Displays text in a blurred state.
 
-### Deployment
+Becomes clear on hover or when a sharp prop is true.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+CSS transitions for smooth blur effect.
 
-### `npm run build` fails to minify
+##### 2. CustomLink Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Styled anchor tag with hover transitions.
+
+Accepts props like text, url, and color.
+
+Demonstrates component reusability and dynamic styling.
+' fix and give me the code
